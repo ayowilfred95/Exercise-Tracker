@@ -10,10 +10,10 @@ const app = express();
 // Middleware
 app.use(express.json());
 
-//route
+//create a route that will be used
 app.use('/api/workouts',workoutRoutes);
 
-// connect to bd
+// connect to db
 mongoose.connect(process.env.MONGO_URI)
     .then(()=>{
         // listen to request
