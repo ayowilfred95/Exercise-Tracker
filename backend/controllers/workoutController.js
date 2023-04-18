@@ -24,7 +24,7 @@ const getWorkout = async (req,res)=>{
 }
 
 // create new workout
-const createWorkout = async (req,res,next) => {
+const createWorkout = async (req,res) => {
     const {title,load,reps} = req.body
 
     // adds documents to db
@@ -34,9 +34,11 @@ const createWorkout = async (req,res,next) => {
        })
        res.status(200).json(workout)
     }catch(error) {
-       res.status(400).json({errror: error.message})
+       res.status(400).json({error: error.message})
     }
+
 }
+
 
 
 // delete a workout
