@@ -27,7 +27,8 @@ const getWorkout = async (req,res)=>{
 const createWorkout = async (req,res) => {
     const {title,load,reps} = req.body
 
-    // adds documents to db
+    // adds documents to database
+    // All the props are required
     try{
        const workout = await Workout.create({
           title,load,reps

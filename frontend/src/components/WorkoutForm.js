@@ -7,6 +7,7 @@ function WorkoutForm() {
     const [load, setLoad] = useState('')
     const [reps, setReps] = useState('')
     const [error, setError] = useState('')
+   
 
     const handleSubmit = async (e)=>{
         e.preventDefault()
@@ -32,6 +33,7 @@ function WorkoutForm() {
             setLoad('')
             setReps('')
             setError(null)
+            alert('successfully added a new workout')
             console.log('new workout added', json);
         }
 
@@ -65,6 +67,7 @@ function WorkoutForm() {
 
         <button>Add Workout</button>   
         {error && <div className='error'>{error}</div>}
+
     </form>
 
   )
