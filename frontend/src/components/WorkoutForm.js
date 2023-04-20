@@ -1,6 +1,9 @@
 import React, { useState } from 'react'
+import { useWorkoutsContext } from '../hooks/useWorkoutsContext'
 
 function WorkoutForm() {
+
+    const {dispatch } = useWorkoutsContext()
 
     // create the state for each of different props that users is going to type in
     const [title, setTitle] = useState('')
@@ -33,8 +36,8 @@ function WorkoutForm() {
             setLoad('')
             setReps('')
             setError(null)
-            alert('successfully added a new workout')
             console.log('new workout added', json);
+            dispatch({type: 'CREATE_WORKOUT', payload: json})
         }
 
     }
